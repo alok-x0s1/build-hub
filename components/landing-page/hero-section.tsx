@@ -53,8 +53,15 @@ export default function HeroSection() {
 				<div className="flex flex-col items-center justify-center lg:py-24 py-12 text-center">
 					<LiveBadge />
 					<h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold tracking-tight mb-6 max-w-5xl">
-						Share What You&apos;ve Built, Discover What&apos;s
-						Launching
+						Share What You&apos;ve{" "}
+						<span className="bg-linear-to-r from-primary via-chart-1 to-chart-5 bg-clip-text text-transparent">
+							Built
+						</span>
+						,<br />
+						Discover What&apos;s{" "}
+						<span className="bg-linear-to-r from-primary via-chart-1 to-chart-5 bg-clip-text text-transparent">
+							Launching
+						</span>
 					</h1>
 					<p className="text-lg sm:text-xl text-muted-foreground mb-10 max-w-2xl leading-relaxed">
 						A platform for creators to showcase their work, get
