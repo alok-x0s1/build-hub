@@ -14,6 +14,15 @@ export async function getFeaturedProducts() {
 	return productsData;
 }
 
+export async function getAllProductsAdmin() {
+	const productsData = await db
+		.select()
+		.from(products)
+		.orderBy(desc(products.createdAt));
+
+	return productsData;
+}
+
 export async function getAllProducts() {
 	const productsData = await db
 		.select()

@@ -11,7 +11,7 @@ import { productSchema } from "./product-validations";
 
 export const addProductAction = async (
 	prevState: FormState,
-	formData: FormData
+	formData: FormData,
 ) => {
 	try {
 		const { userId, orgId } = await auth();
@@ -39,7 +39,6 @@ export const addProductAction = async (
 
 		const rawFormData = Object.fromEntries(formData.entries());
 
-		//validate the data
 		const validatedData = productSchema.safeParse(rawFormData);
 
 		if (!validatedData.success) {
@@ -57,7 +56,6 @@ export const addProductAction = async (
 			? tags.filter((tag) => typeof tag === "string")
 			: [];
 
-		//transform the data
 		await db.insert(products).values({
 			name,
 			slug,
@@ -98,22 +96,13 @@ export const addProductAction = async (
 
 export const upvoteProductAction = async (productId: number) => {
 	try {
-		const { userId, orgId } = await auth();
+		const { userId } = await auth();
 
 		if (!userId) {
 			console.log("User not signed in");
 			return {
 				success: false,
-				message: "You must be signed in to submit a product",
-			};
-		}
-
-		if (!orgId) {
-			console.log("User not a member of an organization");
-			return {
-				success: false,
-				message:
-					"You must be a member of an organization to submit a product",
+				message: "You must be signed in to upvote a product",
 			};
 		}
 
@@ -142,22 +131,13 @@ export const upvoteProductAction = async (productId: number) => {
 
 export const downvoteProductAction = async (productId: number) => {
 	try {
-		const { userId, orgId } = await auth();
+		const { userId } = await auth();
 
 		if (!userId) {
 			console.log("User not signed in");
 			return {
 				success: false,
-				message: "You must be signed in to submit a product",
-			};
-		}
-
-		if (!orgId) {
-			console.log("User not a member of an organization");
-			return {
-				success: false,
-				message:
-					"You must be a member of an organization to submit a product",
+				message: "You must be signed in to downvote a product",
 			};
 		}
 
@@ -178,7 +158,7 @@ export const downvoteProductAction = async (productId: number) => {
 		console.error(error);
 		return {
 			success: false,
-			message: "Failed to down vote product",
+			message: "Failed to downvote product",
 			voteCount: 0,
 		};
 	}

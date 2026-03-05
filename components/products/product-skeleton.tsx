@@ -5,7 +5,7 @@ export default function ProductsSkeleton() {
 	return (
 		<div className="grid-wrapper">
 			{Array.from({ length: 6 }).map((_, i) => (
-				<Card key={i} className="min-h-50">
+				<Card key={i} className="min-h-45">
 					<CardHeader>
 						<div className="flex items-start gap-4">
 							<div className="flex-1 space-y-2">
