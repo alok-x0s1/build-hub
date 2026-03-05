@@ -3,8 +3,6 @@ import { Logo } from "./header";
 import { Github, Linkedin, Twitter } from "lucide-react";
 
 export default function Footer() {
-	const year = new Date().getFullYear();
-
 	return (
 		<footer className="border-t bg-muted/5 py-12">
 			<div className="wrapper">
@@ -30,7 +28,7 @@ export default function Footer() {
 							<li>
 								<Link
 									className="hover:text-primary duration-300 transition-colors"
-									href="/trending"
+									href="#trending"
 								>
 									Trending
 								</Link>
@@ -77,7 +75,7 @@ export default function Footer() {
 				</div>
 				<div className="mt-12 pt-8 border-t flex flex-col sm:flex-row justify-between items-center gap-4">
 					<p className="text-sm text-muted-foreground">
-						&copy; BuildHub Inc. {year} | All rights reserved.
+						&copy; BuildHub Inc. {2026} | All rights reserved.
 					</p>
 					<div className="flex items-center gap-4">
 						<Link

@@ -43,7 +43,7 @@
 	--radius-xl: calc(var(--radius) + 4px);
 
 	--animate-fade-in-up: fade-in-up 0.5s ease-out forwards;
-	
+
 	@keyframes fade-in-up {
 		from {
 			opacity: 0;
@@ -283,4 +283,8 @@
 
 ::-webkit-scrollbar {
 	display: none;
+}
+
+::selection {
+	@apply bg-primary/75 text-primary-foreground;
 }

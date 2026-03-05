@@ -1,10 +1,10 @@
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import {
-	ArrowRightIcon,
 	EyeIcon,
+	Forward,
 	RocketIcon,
-	SparklesIcon,
+	Shredder,
 	UsersIcon,
 } from "lucide-react";
 import Link from "next/link";
@@ -76,7 +76,7 @@ export default function HeroSection() {
 							className="text-base px-8 shadow-lg"
 						>
 							<Link href="/submit">
-								<SparklesIcon className="size-5" />
+								<Shredder className="size-5" />
 								Share Your Project
 							</Link>
 						</Button>
@@ -87,8 +87,7 @@ export default function HeroSection() {
 							variant="secondary"
 						>
 							<Link href="/explore">
-								Explore Projects{" "}
-								<ArrowRightIcon className="size-5" />
+								Explore Projects <Forward className="size-5" />
 							</Link>
 						</Button>
 					</div>
