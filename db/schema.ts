@@ -33,7 +33,7 @@ export const products = pgTable(
 		),
 		userId: varchar("user_id", { length: 255 }),
 
-		organizationId: varchar("organization_id", { length: 255 }), // Clerk org ID
+		organizationId: varchar("organization_id", { length: 255 }),
 	},
 	(table) => ({
 		slugIdx: uniqueIndex("products_slug_idx").on(table.slug),
@@ -41,5 +41,24 @@ export const products = pgTable(
 		organizationIdx: index("products_organization_idx").on(
 			table.organizationId
 		),
+	})
+);
+
+export const contactSubmissions = pgTable(
+	"contact_submissions",
+	{
+		id: serial("id").primaryKey(),
+		name: varchar("name", { length: 255 }).notNull(),
+		email: varchar("email", { length: 255 }).notNull(),
+		subject: varchar("subject", { length: 255 }).notNull(),
+		description: text("description").notNull(),
+		reason: varchar("reason", { length: 100 }).notNull(),
+		status: varchar("status", { length: 20 }).default("pending"),
+		createdAt: timestamp("created_at", { withTimezone: true }).defaultNow(),
+		userId: varchar("user_id", { length: 255 }),
+	},
+	(table) => ({
+		statusIdx: index("contact_submissions_status_idx").on(table.status),
+		emailIdx: index("contact_submissions_email_idx").on(table.email),
 	})
 );
