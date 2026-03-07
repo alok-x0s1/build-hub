@@ -15,6 +15,7 @@ import {
 	StarIcon,
 	UserIcon,
 } from "lucide-react";
+import { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 
@@ -23,6 +24,12 @@ export const generateStaticParams = async () => {
 	return products.map((product) => ({
 		slug: product.slug.toString(),
 	}));
+};
+
+export const metadata: Metadata = {
+	title: "About Product - BuildHub",
+	description:
+		"Learn more about this amazing product and support it by voting. Discover features, launch date, and submitter information.",
 };
 
 export default async function Product({
@@ -90,7 +97,7 @@ export default async function Product({
 										label: "Launched:",
 										value: new Date(
 											product.createdAt?.toISOString() ??
-												"",
+												""
 										).toLocaleDateString(),
 										icon: CalendarIcon,
 									},

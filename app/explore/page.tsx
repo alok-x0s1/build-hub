@@ -4,6 +4,12 @@ import SectionHeader from "@/components/common/section-header";
 import ProductExplorer from "@/components/products/product-explorer";
 import { getFeaturedProducts } from "@/lib/products/product-select";
 import { CompassIcon } from "lucide-react";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+	title: "Explore Products - BuildHub",
+	description: "Browse and discover amazing projects from our community",
+};
 
 export default async function ExplorePage() {
 	const products = await getFeaturedProducts();

@@ -1,6 +1,13 @@
 import SectionHeader from "@/components/common/section-header";
 import ProductSubmitForm from "@/components/products/product-submit-form";
 import { SparklesIcon } from "lucide-react";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+	title: "Submit Product - BuildHub",
+	description:
+		"Share your creation with the community. Your submission will be reviewed before going live.",
+};
 
 export default function SubmitPage() {
 	return (
