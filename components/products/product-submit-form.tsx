@@ -6,7 +6,7 @@ import { cn } from "@/lib/utils";
 import { FormState } from "@/types";
 import { Loader2Icon, SparklesIcon } from "lucide-react";
 import { useActionState } from "react";
-import { FormField } from "../form/form-field";
+import { FormField } from "@/components/form/form-field";
 
 const initialState: FormState = {
 	success: false,
