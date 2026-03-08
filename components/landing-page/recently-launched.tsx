@@ -4,7 +4,7 @@ import ProductCard from "@/components/products/product-card";
 import EmptyState from "@/components/common/empty-state";
 import { getRecentlyLaunchedProducts } from "@/lib/products/product-select";
 import { Suspense } from "react";
-import ProductsSkeleton from "../products/product-skeleton";
+import ProductsSkeleton from "@/components/products/product-skeleton";
 
 export default function RecentlyLaunched() {
 	return (

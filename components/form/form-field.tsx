@@ -11,7 +11,7 @@ interface FormFieldProps {
 	onChange: (
 		e:
 			| React.ChangeEvent<HTMLInputElement>
-			| React.ChangeEvent<HTMLTextAreaElement>,
+			| React.ChangeEvent<HTMLTextAreaElement>
 	) => void;
 	error: string[];
 	helperText?: string;
@@ -40,7 +40,7 @@ export const FormField = ({
 					required={required}
 					onChange={
 						onChange as (
-							e: React.ChangeEvent<HTMLTextAreaElement>,
+							e: React.ChangeEvent<HTMLTextAreaElement>
 						) => void
 					}
 				/>
@@ -52,7 +52,7 @@ export const FormField = ({
 					required={required}
 					onChange={
 						onChange as (
-							e: React.ChangeEvent<HTMLInputElement>,
+							e: React.ChangeEvent<HTMLInputElement>
 						) => void
 					}
 				/>
