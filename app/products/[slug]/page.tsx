@@ -9,11 +9,11 @@ import {
 	getProductBySlug,
 } from "@/lib/products/product-select";
 import {
-	ArrowLeftIcon,
-	CalendarIcon,
-	ExternalLinkIcon,
-	StarIcon,
-	UserIcon,
+	Calendar,
+	FileSymlink,
+	LineDotRightHorizontal,
+	StepBack,
+	UserMinus,
 } from "lucide-react";
 import { Metadata } from "next";
 import Link from "next/link";
@@ -54,7 +54,7 @@ export default async function Product({
 					href="/explore"
 					className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground mb-8 transition-colors"
 				>
-					<ArrowLeftIcon className="size-4" /> Back to Explore
+					<StepBack className="size-4" /> Back to Explore
 				</Link>
 
 				<div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-12">
@@ -64,7 +64,7 @@ export default async function Product({
 								<div className="mb-6">
 									<SectionHeader
 										title={name}
-										icon={StarIcon}
+										icon={LineDotRightHorizontal}
 										description={tagline ?? ""}
 									/>
 								</div>
@@ -97,14 +97,14 @@ export default async function Product({
 										label: "Launched:",
 										value: new Date(
 											product.createdAt?.toISOString() ??
-												""
+												"",
 										).toLocaleDateString(),
-										icon: CalendarIcon,
+										icon: Calendar,
 									},
 									{
 										label: "Submitted by:",
 										value: product.submittedBy,
-										icon: UserIcon,
+										icon: UserMinus,
 									},
 								].map(({ label, value, icon: Icon }) => (
 									<div
@@ -157,7 +157,7 @@ export default async function Product({
 										rel="noopener noreferrer"
 									>
 										Visit Website{" "}
-										<ExternalLinkIcon className="size-4 ml-2" />
+										<FileSymlink className="size-4 ml-2" />
 									</a>
 								</Button>
 							)}

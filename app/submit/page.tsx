@@ -1,6 +1,6 @@
 import SectionHeader from "@/components/common/section-header";
 import ProductSubmitForm from "@/components/products/product-submit-form";
-import { SparklesIcon } from "lucide-react";
+import { Cctv } from "lucide-react";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -16,7 +16,7 @@ export default function SubmitPage() {
 				<div className="mb-12">
 					<SectionHeader
 						title="Submit Your Product"
-						icon={SparklesIcon}
+						icon={Cctv}
 						description="Share your creation with the community. Your submission will be reviewed before going live."
 					/>
 				</div>

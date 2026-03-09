@@ -1,21 +1,23 @@
 "use client";
 
-import { ClockIcon, SearchIcon, TrendingUpIcon } from "lucide-react";
+import { Pagination } from "@/components/pagination";
+import ProductCard from "@/components/products/product-card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import ProductCard from "@/components/products/product-card";
 import { ProductType } from "@/types";
+import {
+	BookSearch,
+	FolderClock,
+	TrendingUpIcon
+} from "lucide-react";
 import { useEffect, useMemo, useState } from "react";
-import { Pagination } from "@/components/pagination";
 
 export default function ProductExplorer({
 	products,
 }: {
 	products: ProductType[];
 }) {
-	const [sortBy, setSortBy] = useState<"trending" | "recent">(
-		"trending",
-	);
+	const [sortBy, setSortBy] = useState<"trending" | "recent">("trending");
 	const [searchQuery, setSearchQuery] = useState("");
 
 	const filteredProducts = useMemo(() => {
@@ -37,7 +39,7 @@ export default function ProductExplorer({
 						new Date(b.createdAt || "").getTime() -
 						new Date(a.createdAt || "").getTime(),
 				);
-			
+
 			default:
 				return filtered;
 		}
@@ -68,7 +70,7 @@ export default function ProductExplorer({
 		<div>
 			<div className="flex flex-col sm:flex-row gap-4 mb-8">
 				<div className="flex-1 relative">
-					<SearchIcon className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground size-4" />
+					<BookSearch className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground size-4" />
 					<Input
 						type="text"
 						placeholder="Search products..."
@@ -90,7 +92,7 @@ export default function ProductExplorer({
 						variant={sortBy === "recent" ? "default" : "outline"}
 						onClick={() => setSortBy("recent")}
 					>
-						<ClockIcon className="size-4" />
+						<FolderClock className="size-4" />
 						Recent
 					</Button>
 				</div>

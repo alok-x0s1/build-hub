@@ -1,12 +1,12 @@
 "use cache";
 
-import SectionHeader from "@/components/common/section-header";
-import { ArrowUpRightIcon, HatGlasses, StarIcon } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import Link from "next/link";
-import ProductCard from "@/components/products/product-card";
-import { getFeaturedProducts } from "@/lib/products/product-select";
 import EmptyState from "@/components/common/empty-state";
+import SectionHeader from "@/components/common/section-header";
+import ProductCard from "@/components/products/product-card";
+import { Button } from "@/components/ui/button";
+import { getFeaturedProducts } from "@/lib/products/product-select";
+import { Birdhouse, ChevronsRight, Sunrise } from "lucide-react";
+import Link from "next/link";
 
 export default async function FeaturedProducts() {
 	const products = await getFeaturedProducts();
@@ -20,7 +20,7 @@ export default async function FeaturedProducts() {
 				<div className="flex items-center justify-between mb-8">
 					<SectionHeader
 						title="Featured Today"
-						icon={StarIcon}
+						icon={Birdhouse}
 						description="Top picks from our community this week"
 					/>
 					<Button
@@ -29,7 +29,7 @@ export default async function FeaturedProducts() {
 						className="hidden sm:flex"
 					>
 						<Link href="/explore">
-							View All <ArrowUpRightIcon className="size-4" />
+							View All <ChevronsRight className="size-4" />
 						</Link>
 					</Button>
 				</div>
@@ -43,7 +43,7 @@ export default async function FeaturedProducts() {
 				) : (
 					<EmptyState
 						message="No featured products today. Check back tomorrow!"
-						icon={HatGlasses}
+						icon={Sunrise}
 					/>
 				)}
 			</div>

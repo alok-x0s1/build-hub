@@ -5,7 +5,7 @@ import {
 	HousePlug,
 	LoaderIcon,
 	SparklesIcon,
-	Telescope
+	Telescope,
 } from "lucide-react";
 import Link from "next/link";
 import { Suspense } from "react";
@@ -56,18 +56,11 @@ export default function Header() {
 							}
 						>
 							<SignedOut>
-								<SignInButton>
-									<Button
-										variant="ghost"
-										className="cursor-pointer"
-									>
-										Sign In
-									</Button>
+								<SignInButton mode="modal">
+									<Button variant="ghost">Sign In</Button>
 								</SignInButton>
-								<SignUpButton>
-									<Button className="cursor-pointer">
-										Sign Up
-									</Button>
+								<SignUpButton mode="modal">
+									<Button>Sign Up</Button>
 								</SignUpButton>
 							</SignedOut>
 							<SignedIn>

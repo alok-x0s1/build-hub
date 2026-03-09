@@ -1,11 +1,11 @@
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import {
-	EyeIcon,
+	FolderGit2,
 	Forward,
-	RocketIcon,
+	HatGlasses,
 	Shredder,
-	UsersIcon,
+	UsersIcon
 } from "lucide-react";
 import Link from "next/link";
 import StatsCard from "./stats-card";
@@ -29,19 +29,19 @@ const LiveBadge = () => {
 
 const statsData = [
 	{
-		icon: RocketIcon,
-		value: "2.5K+",
+		icon: FolderGit2,
+		value: "1.4K+",
 		label: "Projects Shared",
 	},
 	{
 		icon: UsersIcon,
-		value: "10K+",
+		value: "7K+",
 		label: "Active Creators",
 		hasBorder: true,
 	},
 	{
-		icon: EyeIcon,
-		value: "50K+",
+		icon: HatGlasses,
+		value: "43K+",
 		label: "Monthly Visitors",
 	},
 ];

@@ -56,7 +56,7 @@ export default function CustomUserButton() {
 
 						<div className="space-y-3">
 							<div className="flex items-start gap-3">
-								<div className="mt-0.5 flex h-5 w-5 items-center justify-center rounded-full bg-blue-100 text-blue-600 dark:bg-blue-900/30 dark:text-blue-400">
+								<div className="mt-0.5 flex h-5 w-5 items-center justify-center rounded-full bg-blue-100 text-blue-600">
 									<svg
 										className="size-3"
 										fill="currentColor"
@@ -81,7 +81,7 @@ export default function CustomUserButton() {
 							</div>
 
 							<div className="flex items-start gap-3">
-								<div className="mt-0.5 flex h-5 w-5 items-center justify-center rounded-full bg-green-100 text-green-600 dark:bg-green-900/30 dark:text-green-400">
+								<div className="mt-0.5 flex h-5 w-5 items-center justify-center rounded-full bg-green-100 text-green-600">
 									<svg
 										className="size-3"
 										fill="currentColor"
@@ -106,7 +106,7 @@ export default function CustomUserButton() {
 							</div>
 
 							<div className="flex items-start gap-3">
-								<div className="mt-0.5 flex h-5 w-5 items-center justify-center rounded-full bg-purple-100 text-purple-600 dark:bg-purple-900/30 dark:text-purple-400">
+								<div className="mt-0.5 flex h-5 w-5 items-center justify-center rounded-full bg-purple-100 text-purple-600">
 									<svg
 										className="size-3"
 										fill="currentColor"
@@ -131,7 +131,7 @@ export default function CustomUserButton() {
 							</div>
 
 							<div className="flex items-start gap-3">
-								<div className="mt-0.5 flex h-5 w-5 items-center justify-center rounded-full bg-amber-100 text-amber-600 dark:bg-amber-900/30 dark:text-amber-400">
+								<div className="mt-0.5 flex h-5 w-5 items-center justify-center rounded-full bg-amber-100 text-amber-600">
 									<svg
 										className="size-3"
 										fill="currentColor"
@@ -157,7 +157,7 @@ export default function CustomUserButton() {
 						</div>
 					</div>
 
-					<div className="rounded-lg border border-blue-200 bg-blue-50 p-4 dark:border-blue-800 dark:bg-blue-950/50 space-y-3">
+					<div className="rounded-lg border border-blue-200 bg-blue-50 p-4 space-y-3">
 						<div className="flex items-center gap-2">
 							<div className="flex h-8 w-8 items-center justify-center rounded-lg bg-blue-100 text-blue-600 border border-blue-200">
 								<NotebookPen className="size-4" />
@@ -168,7 +168,7 @@ export default function CustomUserButton() {
 						</div>
 
 						<div className="space-y-2">
-							<p className="text-xs text-blue-700 dark:text-blue-300">
+							<p className="text-xs text-blue-700">
 								Create or join an organization to start
 								collaborating with your team and unlock powerful
 								team features.
@@ -179,11 +179,11 @@ export default function CustomUserButton() {
 									<span className="flex h-5 w-5 items-center justify-center rounded-md bg-blue-600 text-white text-xs font-bold">
 										1
 									</span>
-									<span className="text-xs font-medium text-blue-800 dark:text-blue-200">
+									<span className="text-xs font-medium text-blue-800">
 										Create Organization
 									</span>
 								</div>
-								<p className="text-xs text-blue-700 dark:text-blue-300 ml-2">
+								<p className="text-xs text-blue-700 ml-2">
 									Set up your team workspace with a name and
 									description
 								</p>
@@ -192,11 +192,11 @@ export default function CustomUserButton() {
 									<span className="flex h-5 w-5 items-center justify-center rounded-md bg-blue-600 text-white text-xs font-bold">
 										2
 									</span>
-									<span className="text-xs font-medium text-blue-800 dark:text-blue-200">
+									<span className="text-xs font-medium text-blue-800">
 										Invite Members
 									</span>
 								</div>
-								<p className="text-xs text-blue-700 dark:text-blue-300 ml-2">
+								<p className="text-xs text-blue-700 ml-2">
 									Add team members via email invitations
 								</p>
 
@@ -204,11 +204,11 @@ export default function CustomUserButton() {
 									<span className="flex h-5 w-5 items-center justify-center rounded-md bg-blue-600 text-white text-xs font-bold">
 										3
 									</span>
-									<span className="text-xs font-medium text-blue-800 dark:text-blue-200">
+									<span className="text-xs font-medium text-blue-800">
 										Start Collaborating
 									</span>
 								</div>
-								<p className="text-xs text-blue-700 dark:text-blue-300 ml-2">
+								<p className="text-xs text-blue-700 ml-2">
 									Share products and work together on projects
 								</p>
 							</div>
@@ -223,7 +223,7 @@ export default function CustomUserButton() {
 									Organization Status
 								</span>
 							</div>
-							<span className="text-xs font-medium text-blue-600 dark:text-blue-400">
+							<span className="text-xs font-medium text-blue-600">
 								Personal Account
 							</span>
 						</div>
@@ -286,7 +286,7 @@ export default function CustomUserButton() {
 
 						<div className="space-y-3">
 							<div className="flex items-start gap-3">
-								<div className="mt-0.5 flex h-5 w-5 items-center justify-center rounded-full bg-green-100 text-green-600 dark:bg-green-900/30 dark:text-green-400">
+								<div className="mt-0.5 flex h-5 w-5 items-center justify-center rounded-full bg-green-100 text-green-600">
 									<svg
 										className="size-3"
 										fill="currentColor"
@@ -311,7 +311,7 @@ export default function CustomUserButton() {
 							</div>
 
 							<div className="flex items-start gap-3">
-								<div className="mt-0.5 flex h-5 w-5 items-center justify-center rounded-full bg-purple-100 text-purple-600 dark:bg-purple-900/30 dark:text-purple-400">
+								<div className="mt-0.5 flex h-5 w-5 items-center justify-center rounded-full bg-purple-100 text-purple-600">
 									<svg
 										className="size-3"
 										fill="currentColor"
@@ -336,7 +336,7 @@ export default function CustomUserButton() {
 							</div>
 
 							<div className="flex items-start gap-3">
-								<div className="mt-0.5 flex h-5 w-5 items-center justify-center rounded-full bg-amber-100 text-amber-600 dark:bg-amber-900/30 dark:text-amber-400">
+								<div className="mt-0.5 flex h-5 w-5 items-center justify-center rounded-full bg-amber-100 text-amber-600">
 									<svg
 										className="size-3"
 										fill="currentColor"
@@ -362,36 +362,36 @@ export default function CustomUserButton() {
 						</div>
 					</div>
 
-					<div className="rounded-lg border border-amber-200 bg-amber-50 p-4 dark:border-amber-800 dark:bg-amber-950/50 space-y-3">
+					<div className="rounded-lg border border-amber-200 bg-amber-50 p-4 space-y-3">
 						<div className="flex items-center gap-2">
 							<div className="flex h-8 w-8 items-center justify-center rounded-lg bg-amber-100 text-amber-600 border border-amber-300">
 								<Siren className="size-4" />
 							</div>
-							<h3 className="text-sm font-medium text-amber-800 dark:text-amber-200">
+							<h3 className="text-sm font-medium text-amber-8">
 								Admin Access Required
 							</h3>
 						</div>
 
 						<div className="space-y-2">
-							<p className="text-xs text-amber-700 dark:text-amber-300">
+							<p className="text-xs text-amber-7">
 								Access to this panel is restricted to authorized
 								administrators only. If you need admin
 								privileges for platform management, please
 								contact us.
 							</p>
 
-							<div className="rounded-lg bg-amber-100/50 p-3 dark:bg-amber-900/20 space-y-2 border border-amber-200">
+							<div className="rounded-lg bg-amber-100/50 p-3 space-y-2 border border-amber-200">
 								<div className="flex items-center gap-2">
-									<MailQuestionMark className="size-4 text-amber-600 dark:text-amber-400" />
+									<MailQuestionMark className="size-4 text-amber-600" />
 
-									<span className="text-xs font-medium text-amber-800 dark:text-amber-200">
+									<span className="text-xs font-medium text-amber-800">
 										Contact for Admin Access
 									</span>
 								</div>
-								<p className="text-xs text-amber-700 dark:text-amber-300 ml-6">
+								<p className="text-xs text-amber-700 ml-6">
 									Email: yalok6321@gmail.com
 								</p>
-								<p className="text-xs text-amber-700 dark:text-amber-300 ml-6">
+								<p className="text-xs text-amber-700 ml-6">
 									Please include your username and reason for
 									access request
 								</p>
@@ -416,8 +416,8 @@ export default function CustomUserButton() {
 							<span
 								className={`text-xs font-medium ${
 									isAdmin
-										? "text-green-600 dark:text-green-400"
-										: "text-slate-600 dark:text-slate-400"
+										? "text-green-600"
+										: "text-slate-600"
 								}`}
 							>
 								{isAdmin ? "Admin" : "Standard User"}

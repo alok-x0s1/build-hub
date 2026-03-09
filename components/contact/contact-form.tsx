@@ -14,7 +14,7 @@ import {
 import { contactSubmissionsAction } from "@/lib/contact/contact-actions";
 import { cn } from "@/lib/utils";
 import { FormState } from "@/types";
-import { CheckCircle, Loader2Icon, Send } from "lucide-react";
+import { CheckCircle, Loader2Icon, SendHorizonal } from "lucide-react";
 import { useActionState, useState } from "react";
 import { FormField } from "../form/form-field";
 import { Label } from "../ui/label";
@@ -131,37 +131,6 @@ export function ContactForm() {
 				textarea
 			/>
 
-			{/* <FormField
-						control={form.control}
-						name="reason"
-						render={({ field }) => (
-							<FormItem>
-								<FormLabel>Reason for Contact</FormLabel>
-								<Select
-									onValueChange={field.onChange}
-									defaultValue={field.value}
-								>
-									<FormControl>
-										<SelectTrigger>
-											<SelectValue placeholder="Select a reason" />
-										</SelectTrigger>
-									</FormControl>
-									<SelectContent>
-										{contactReasons.map((reason) => (
-											<SelectItem
-												key={reason.value}
-												value={reason.value}
-											>
-												{reason.label}
-											</SelectItem>
-										))}
-									</SelectContent>
-								</Select>
-								<FormMessage />
-							</FormItem>
-						)}
-					/> */}
-
 			<input type="hidden" name="reason" value={reason} />
 
 			<div className="flex flex-col gap-2">
@@ -201,41 +170,6 @@ export function ContactForm() {
 				)}
 			</div>
 
-			{/* <FormField
-						control={form.control}
-						name="subject"
-						render={({ field }) => (
-							<FormItem>
-								<FormLabel>Subject</FormLabel>
-								<FormControl>
-									<Input
-										placeholder="What's this about?"
-										{...field}
-									/>
-								</FormControl>
-								<FormMessage />
-							</FormItem>
-						)}
-					/> */}
-
-			{/* <FormField
-						control={form.control}
-						name="description"
-						render={({ field }) => (
-							<FormItem>
-								<FormLabel>Description</FormLabel>
-								<FormControl>
-									<Textarea
-										placeholder="Tell us more about your inquiry..."
-										className="min-h-32"
-										{...field}
-									/>
-								</FormControl>
-								<FormMessage />
-							</FormItem>
-						)}
-					/> */}
-
 			<Button
 				type="submit"
 				size="lg"
@@ -246,7 +180,7 @@ export function ContactForm() {
 					<Loader2Icon className="size-4 animate-spin" />
 				) : (
 					<>
-						<Send className="h-4 w-4 mr-2" />
+						<SendHorizonal className="h-4 w-4 mr-2" />
 						Send Message
 					</>
 				)}

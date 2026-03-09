@@ -1,4 +1,5 @@
-import { Metadata } from "next";
+import SectionHeader from "@/components/common/section-header";
+import { ContactForm } from "@/components/contact/contact-form";
 import {
 	Card,
 	CardContent,
@@ -6,9 +7,8 @@ import {
 	CardHeader,
 	CardTitle,
 } from "@/components/ui/card";
-import { MonitorSmartphone, FileQuestionMark } from "lucide-react";
-import SectionHeader from "@/components/common/section-header";
-import { ContactForm } from "@/components/contact/contact-form";
+import { Cctv, FileQuestionMark } from "lucide-react";
+import { Metadata } from "next";
 
 export const metadata: Metadata = {
 	title: "Contact Us - BuildHub",
@@ -23,7 +23,7 @@ export default function ContactPage() {
 				<div className="mb-12">
 					<SectionHeader
 						title="Contact Us"
-						icon={MonitorSmartphone}
+						icon={Cctv}
 						description="Have questions, feedback, or want to contribute? We're here to help and would love to hear from you."
 					/>
 				</div>
