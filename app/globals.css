@@ -42,6 +42,27 @@
 	--radius-lg: var(--radius);
 	--radius-xl: calc(var(--radius) + 4px);
 
+	/* Clerk Styles */
+	--color-clerk-color-primary: var(--clerk-color-primary);
+	--color-clerk-color-primary-foreground: var(
+		--clerk-color-primary-foreground
+	);
+	--color-clerk-color-danger: var(--clerk-color-danger);
+	--color-clerk-color-success: var(--clerk-color-success);
+	--color-clerk-color-warning: var(--clerk-color-warning);
+	--color-clerk-color-neutral: var(--clerk-color-neutral);
+	--color-clerk-color-foreground: var(--clerk-color-foreground);
+	--color-clerk-color-muted-foreground: var(--clerk-color-muted-foreground);
+	--color-clerk-color-background: var(--clerk-color-background);
+	--color-clerk-color-input: var(--clerk-color-input);
+	--color-clerk-color-input-foreground: var(--clerk-color-input-foreground);
+	--color-clerk-color-ring: var(--clerk-color-ring);
+	--color-clerk-color-shimmer: var(--clerk-color-shimmer);
+	--color-clerk-color-modal-backdrop: var(--clerk-color-modal-backdrop);
+	--color-clerk-border-radius: 0.375rem;
+	--color-clerk-spacing: 1rem;
+
+	/* Animations  */
 	--animate-fade-in-up: fade-in-up 0.5s ease-out forwards;
 
 	@keyframes fade-in-up {
@@ -119,6 +140,24 @@
 	--shadow-2xl: 2px 2px 4px 0px hsl(196 83% 10% / 0.38);
 	--tracking-normal: 0em;
 	--spacing: 0.25rem;
+
+	/* Clerk Styles */
+	--clerk-color-primary: #d33682;
+	--clerk-color-primary-foreground: #ffffff;
+	--clerk-color-danger: #ef4444;
+	--clerk-color-success: #22c543;
+	--clerk-color-warning: #f36b16;
+	--clerk-color-neutral: #000000;
+	--clerk-color-foreground: #073642;
+	--clerk-color-muted-foreground: #073642;
+	--clerk-color-background: #fdf6e3;
+	--clerk-color-input: #e7e5d6;
+	--clerk-color-input-foreground: #000000;
+	--clerk-color-ring: #000000;
+	--clerk-color-shimmer: #ffffff;
+	--clerk-color-modal-backdrop: #000000;
+	--clerk-border-radius: 0.375rem;
+	--clerk-spacing: 1rem;
 }
 
 .dark {
@@ -182,6 +221,24 @@
 		2px 2px 4px 0px hsl(196 83% 10% / 0.15),
 		2px 8px 10px -1px hsl(196 83% 10% / 0.15);
 	--shadow-2xl: 2px 2px 4px 0px hsl(196 83% 10% / 0.38);
+	
+	/* Clerk Styles */
+	--clerk-color-primary: #2f3037;
+	--clerk-color-primary-foreground: #ffffff;
+	--clerk-color-danger: #ef4444;
+	--clerk-color-success: #22c543;
+	--clerk-color-warning: #f36b16;
+	--clerk-color-neutral: #000000;
+	--clerk-color-foreground: #000000;
+	--clerk-color-muted-foreground: #747686;
+	--clerk-color-background: #ffffff;
+	--clerk-color-input: #ffffff;
+	--clerk-color-input-foreground: #000000;
+	--clerk-color-ring: #000000;
+	--clerk-color-shimmer: #ffffff;
+	--clerk-color-modal-backdrop: #000000;
+	--clerk-border-radius: 0.375rem;
+	--clerk-spacing: 1rem;
 }
 
 @theme inline {
