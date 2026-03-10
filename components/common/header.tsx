@@ -1,15 +1,21 @@
+"use client";
+
 import { Button } from "@/components/ui/button";
 import { SignedIn, SignedOut, SignInButton, SignUpButton } from "@clerk/nextjs";
 import {
 	Fuel,
 	HousePlug,
+	LineDotRightHorizontal,
 	LoaderIcon,
+	Menu,
 	SparklesIcon,
 	Telescope,
 } from "lucide-react";
 import Link from "next/link";
-import { Suspense } from "react";
+import { Suspense, useEffect, useState } from "react";
 import CustomUserButton from "./custom-user-button";
+import { cn } from "@/lib/utils";
+import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 
 export const Logo = () => {
 	return (
@@ -25,55 +31,146 @@ export const Logo = () => {
 };
 
 export default function Header() {
+	const [hasScrolled, setHasScrolled] = useState(false);
+	const scrollThreshold = 50;
+
+	useEffect(() => {
+		const handleScroll = () => {
+			setHasScrolled(window.scrollY > scrollThreshold);
+		};
+
+		window.addEventListener("scroll", handleScroll);
+		return () => window.removeEventListener("scroll", handleScroll);
+	}, []);
+
 	return (
-		<header className="sticky top-0 z-50 border-b bg-background/95 backdrop-blur supports-backdrop-filter:bg-background/60">
+		<header
+			className={cn(
+				"sticky top-0 z-50 bg-background/95 backdrop-blur supports-backdrop-filter:bg-background/60",
+				hasScrolled && "border-b",
+			)}
+		>
 			<div className="wrapper">
 				<div className="flex h-16 items-center justify-between">
 					<Logo />
-					<nav className="flex items-center gap-1">
+
+					<nav className="hidden md:flex items-center gap-1">
 						<Link
 							href="/"
 							className="flex rounded-md items-center gap-2 px-3 py-2 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors hover:bg-muted/50"
 						>
 							<HousePlug className="size-4" />
-							<span>Home</span>
+							Home
 						</Link>
+
 						<Link
 							href="/explore"
 							className="flex rounded-md items-center gap-2 px-3 py-2 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors hover:bg-muted/50"
 						>
 							<Telescope className="size-4" />
-							<span>Explore</span>
+							Explore
 						</Link>
 					</nav>
 
 					<div className="flex items-center gap-3">
-						<Suspense
-							fallback={
-								<div>
+						<div className="hidden md:flex items-center gap-3">
+							<Suspense
+								fallback={
 									<LoaderIcon className="size-4 animate-spin" />
-								</div>
-							}
-						>
-							<SignedOut>
-								<SignInButton mode="modal">
-									<Button variant="ghost">Sign In</Button>
-								</SignInButton>
-								<SignUpButton mode="modal">
-									<Button>Sign Up</Button>
-								</SignUpButton>
-							</SignedOut>
-							<SignedIn>
-								<Button asChild>
-									<Link href="/submit">
-										<SparklesIcon className="size-4" />
-										Submit Project
-									</Link>
-								</Button>
+								}
+							>
+								<SignedOut>
+									<SignInButton mode="modal">
+										<Button variant="ghost">Sign In</Button>
+									</SignInButton>
 
-								<CustomUserButton />
-							</SignedIn>
-						</Suspense>
+									<SignUpButton mode="modal">
+										<Button>Sign Up</Button>
+									</SignUpButton>
+								</SignedOut>
+
+								<SignedIn>
+									<Button asChild>
+										<Link href="/submit">
+											<SparklesIcon className="size-4" />
+											Submit Project
+										</Link>
+									</Button>
+
+									<CustomUserButton />
+								</SignedIn>
+							</Suspense>
+						</div>
+
+						<div className="md:hidden">
+							<Sheet>
+								<SheetTrigger asChild>
+									<Button variant="ghost" size="icon">
+										<Menu className="size-5" />
+									</Button>
+								</SheetTrigger>
+
+								<SheetContent
+									side="right"
+									className="flex flex-col gap-6 pt-10 px-4"
+								>
+									<nav className="flex flex-col gap-2">
+										<Link
+											href="/"
+											className="flex items-center gap-3 rounded-md px-3 py-2 text-muted-foreground hover:text-foreground hover:bg-muted/50"
+										>
+											<HousePlug className="size-4" />
+											Home
+										</Link>
+
+										<Link
+											href="/explore"
+											className="flex items-center gap-3 rounded-md px-3 py-2 text-muted-foreground hover:text-foreground hover:bg-muted/50"
+										>
+											<Telescope className="size-4" />
+											Explore
+										</Link>
+									</nav>
+
+									<div className="border-t pt-6 flex flex-col gap-3">
+										<Suspense
+											fallback={
+												<LoaderIcon className="size-4 animate-spin" />
+											}
+										>
+											<SignedOut>
+												<SignInButton mode="modal">
+													<Button variant="outline">
+														Sign In
+													</Button>
+												</SignInButton>
+
+												<SignUpButton mode="modal">
+													<Button>Sign Up</Button>
+												</SignUpButton>
+											</SignedOut>
+
+											<SignedIn>
+												<Button asChild>
+													<Link href="/submit">
+														<SparklesIcon className="size-4" />
+														Submit Project
+													</Link>
+												</Button>
+
+												<div className="flex items-center justify-between">
+													<p className="text-sm flex gap-1">
+														Manage your account{" "}
+														<LineDotRightHorizontal />
+													</p>
+													<CustomUserButton />
+												</div>
+											</SignedIn>
+										</Suspense>
+									</div>
+								</SheetContent>
+							</Sheet>
+						</div>
 					</div>
 				</div>
 			</div>

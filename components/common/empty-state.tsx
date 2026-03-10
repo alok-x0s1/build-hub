@@ -18,9 +18,11 @@ export default function EmptyState({
 			)}
 		>
 			{Icon && (
-				<Icon className="size-12 text-muted-foreground/90 mx-auto mb-4" />
+				<Icon className="size-10 md:size-12 text-muted-foreground/90 mx-auto mb-4" />
 			)}
-			<p className="text-lg text-muted-foreground">{message}</p>
+			<p className="text-sm md:text-lg text-muted-foreground">
+				{message}
+			</p>
 		</div>
 	);
 }
