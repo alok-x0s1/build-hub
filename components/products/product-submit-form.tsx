@@ -1,12 +1,12 @@
 "use client";
 
+import { FormField } from "@/components/form/form-field";
 import { Button } from "@/components/ui/button";
 import { addProductAction } from "@/lib/products/product-actions";
 import { cn } from "@/lib/utils";
 import { FormState } from "@/types";
-import { Loader2Icon, SparklesIcon } from "lucide-react";
+import { Loader2Icon, SendHorizonal } from "lucide-react";
 import { useActionState } from "react";
-import { FormField } from "@/components/form/form-field";
 
 const initialState: FormState = {
 	success: false,
@@ -109,7 +109,7 @@ export default function ProductSubmitForm() {
 					<Loader2Icon className="size-4 animate-spin" />
 				) : (
 					<>
-						<SparklesIcon className="size-4" />
+						<SendHorizonal className="size-4" />
 						Submit Product
 					</>
 				)}
