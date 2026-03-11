@@ -1,36 +1,152 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# BuildHub
+
+A platform for creators to showcase their projects, get authentic feedback, and discover what's launching in the maker community. No fake launches, no fake builders—just real people building real things.
+
+![Next.js](https://img.shields.io/badge/Next.js-16.1.0-black)
+![TypeScript](https://img.shields.io/badge/TypeScript-5-blue)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind-4-cyan)
+![Drizzle ORM](https://img.shields.io/badge/Drizzle-ORM-orange)
+[![Vercel](https://img.shields.io/badge/Vercel-Portfolio-000000?logo=vercel&logoColor=white)](https://yalok.vercel.app)
+
+## Features
+
+### Core Functionality
+
+- **Project Submission**: Share your built projects with the community
+- **Product Discovery**: Browse and explore projects from creators worldwide
+- **Voting System**: Upvote projects you love, help great work surface
+- **Search & Filter**: Find projects by name, sort by trending or recent
+- **Responsive Design**: Optimized for all devices and screen sizes
+
+### Admin Panel
+
+- **Content Moderation**: Review and approve submitted projects
+- **User Management**: Handle user submissions and feedback
+- **Analytics Dashboard**: Track platform statistics and growth
+- **Contact Management**: Process support inquiries and partnership requests
+
+### Authentication & Security
+
+- **Clerk Integration**: Secure user authentication and management
+- **Role-based Access**: Different permissions for users and admins
+- **Data Validation**: Comprehensive form validation with Zod schemas
+
+## Tech Stack
+
+### Frontend
+
+- **Next.js 16** - React framework with App Router
+- **React 19** - Latest React with concurrent features
+- **TypeScript** - Type-safe development
+- **Tailwind CSS 4** - Modern styling framework
+
+### Backend & Database
+
+- **Drizzle ORM** - Type-safe SQL query builder
+- **Neon Database** - Serverless PostgreSQL
+- **Clerk** - Authentication and user management
+
+### UI & Forms
+
+- **ShadCN UI** - Styled, accessible UI components
+- **React Hook Form** - Performant forms with easy validation
+- **Zod** - TypeScript-first schema validation
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
+
+- Node.js 18+
+- npm, yarn, pnpm, or bun
+- PostgreSQL database (we recommend [Neon](https://neon.tech))
+
+### Installation
+
+1. **Clone the repository**
+
+    ```bash
+    git clone https://github.com/alok-x0s1/build-hub.git
+    cd build-hub
+    ```
+
+2. **Install dependencies**
+
+    ```bash
+    npm install
+    ```
+
+3. **Set up environment variables**
+
+    Create a `.env.local` file in the root directory:
+
+    ```env
+    # Database
+    DATABASE_URL="your-neon-database-url"
+
+    # Clerk Authentication
+    NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY="your-clerk-publishable-key"
+    CLERK_SECRET_KEY="your-clerk-secret-key"
+    ```
+
+4. **Set up the database**
+
+    ```bash
+    # Generate and run migrations
+    npx drizzle-kit generate
+    npx drizzle-kit migrate
+
+    # Seed the database (optional)
+    npx tsx db/seed.ts
+    ```
+
+5. **Run the development server**
+
+    ```bash
+    npm run dev
+    ```
+
+6. **Open your browser**
+
+    Navigate to [http://localhost:3000](http://localhost:3000) to see the application.
+
+## Available Scripts
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+# Development
+npm run dev          # Start development server
+npm run build        # Build for production
+npm run start        # Start production server
+npm run lint         # Run ESLint
+
+# Database
+npx drizzle-kit generate    # Generate migrations
+npx drizzle-kit migrate     # Run migrations
+npx drizzle-kit push        # Push migrations
+npx drizzle-kit studio      # Open Drizzle Studio
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Contributing
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+We welcome contributions. Please follow these steps:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+1. Fork the repository
+2. Create a feature branch: `git checkout -b feature/your-feature`
+3. Commit your changes: `git commit -m 'Add some feature'`
+4. Push to the branch: `git push origin feature/your-feature`
+5. Open a Pull Request
 
-## Learn More
+### Development Guidelines
 
-To learn more about Next.js, take a look at the following resources:
+- Follow TypeScript best practices
+- Write meaningful commit messages
+- Add tests for new features
+- Update documentation as needed
+- Ensure code passes linting
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Built with ❤️ by the BuildHub team. Join thousands of creators sharing their work.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Connect With Me
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+[![GitHub](https://img.shields.io/badge/GitHub-Alok%20Yadav-181717?logo=github)](https://github.com/alok-x0s1)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Alok%20Yadav-0A66C2?logo=linkedin&logoColor=white)](https://linkedin.com/in/alok-x0s1)
+[![LinkedIn](https://img.shields.io/badge/Instagram-Alok%20Yadav-E4405F?logo=instagram&logoColor=white)](https://instagram.com/9.pnpm)
