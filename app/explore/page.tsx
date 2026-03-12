@@ -3,8 +3,9 @@
 import SectionHeader from "@/components/common/section-header";
 import ProductExplorer from "@/components/products/product-explorer";
 import { getFeaturedProducts } from "@/lib/products/product-select";
-import { ZodiacAries } from "lucide-react";
+import { Loader2, ZodiacAries } from "lucide-react";
 import { Metadata } from "next";
+import { Suspense } from "react";
 
 export const metadata: Metadata = {
 	title: "Explore Products - BuildHub",
@@ -24,7 +25,16 @@ export default async function ExplorePage() {
 						description="Browse and discover amazing projects from our community"
 					/>
 				</div>
-				<ProductExplorer products={products} />
+
+				<Suspense
+					fallback={
+						<div className="flex items-center justify-center w-full min-h-screen">
+							<Loader2 className="size-5 animate-spin" />
+						</div>
+					}
+				>
+					<ProductExplorer products={products} />
+				</Suspense>
 			</div>
 		</div>
 	);

@@ -28,7 +28,7 @@ export default function Footer() {
 							<li>
 								<Link
 									className="hover:text-primary duration-300 transition-colors"
-									href="#trending"
+									href="/explore"
 								>
 									Trending
 								</Link>

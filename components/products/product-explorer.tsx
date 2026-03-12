@@ -5,21 +5,40 @@ import ProductCard from "@/components/products/product-card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { ProductType } from "@/types";
-import {
-	BookSearch,
-	FolderClock,
-	TrendingUpIcon
-} from "lucide-react";
-import { useEffect, useMemo, useState } from "react";
+import { BookSearch, FolderClock, TrendingUpIcon } from "lucide-react";
+import { useMemo, useState, useEffect } from "react";
+import { useRouter, useSearchParams, usePathname } from "next/navigation";
 
 export default function ProductExplorer({
 	products,
 }: {
 	products: ProductType[];
 }) {
-	const [sortBy, setSortBy] = useState<"trending" | "recent">("trending");
-	const [searchQuery, setSearchQuery] = useState("");
+	const router = useRouter();
+	const pathname = usePathname();
+	const searchParams = useSearchParams();
 
+	// ================= Initialize from URL =================
+	const initialSort =
+		(searchParams.get("sort") as "trending" | "recent") || "recent";
+	const initialQuery = searchParams.get("q") || "";
+
+	const [sortBy, setSortBy] = useState<"trending" | "recent">(initialSort);
+	const [searchQuery, setSearchQuery] = useState(initialQuery);
+
+	// ================= Update URL =================
+	useEffect(() => {
+		const params = new URLSearchParams();
+
+		params.set("sort", sortBy);
+
+		if (searchQuery) params.set("q", searchQuery);
+		else params.delete("q");
+
+		router.replace(`${pathname}?${params.toString()}`, { scroll: false });
+	}, [sortBy, searchQuery, router, pathname]);
+
+	// ================= Filtering =================
 	const filteredProducts = useMemo(() => {
 		const filtered = [...products];
 
@@ -45,7 +64,7 @@ export default function ProductExplorer({
 		}
 	}, [searchQuery, products, sortBy]);
 
-	// ========================= Pagination =========================
+	// ================= Pagination =================
 	const [currentPage, setCurrentPage] = useState(1);
 	const itemsPerPage = 6;
 
@@ -88,6 +107,7 @@ export default function ProductExplorer({
 						<TrendingUpIcon className="size-4" />
 						Trending
 					</Button>
+
 					<Button
 						variant={sortBy === "recent" ? "default" : "outline"}
 						onClick={() => setSortBy("recent")}

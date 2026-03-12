@@ -1,5 +1,6 @@
 "use cache";
 
+import BackButton from "@/components/back-button";
 import SectionHeader from "@/components/common/section-header";
 import VotingButtons from "@/components/products/voting-buttons";
 import { Badge } from "@/components/ui/badge";
@@ -9,14 +10,11 @@ import {
 	getProductBySlug,
 } from "@/lib/products/product-select";
 import {
-	Calendar,
 	FileSymlink,
 	LineDotRightHorizontal,
-	StepBack,
-	UserMinus,
+	UserMinus
 } from "lucide-react";
 import { Metadata } from "next";
-import Link from "next/link";
 import { notFound } from "next/navigation";
 
 export const generateStaticParams = async () => {
@@ -50,12 +48,7 @@ export default async function Product({
 	return (
 		<div className="py-16 pt-10 min-h-screen">
 			<div className="wrapper">
-				<Link
-					href="/explore"
-					className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground mb-8 transition-colors"
-				>
-					<StepBack className="size-4" /> Back to Explore
-				</Link>
+				<BackButton />
 
 				<div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-12">
 					<div className="lg:col-span-2 space-y-6">
@@ -95,11 +88,19 @@ export default async function Product({
 								{[
 									{
 										label: "Launched:",
-										value: new Date(
-											product.createdAt?.toISOString() ??
-												"",
-										).toLocaleDateString(),
-										icon: Calendar,
+										value: new Intl.DateTimeFormat(
+											"en-US",
+											{
+												year: "numeric",
+												month: "short",
+												day: "numeric",
+											},
+										).format(
+											new Date(
+												product.createdAt?.toISOString() ??
+													"",
+											),
+										),
 									},
 									{
 										label: "Submitted by:",
